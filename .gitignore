@@ -62,11 +62,10 @@ ACORN/solar/Scenario144/*.csv
 !ACORN/wind/wind_2011.csv
 !ACORN/wind/wind_2002.csv
 
-# Output
+# Intermediate output
 workflow/base_scenarios/embedding_params/*.csv
-workflow/base_scenarios/embedding_params/figures/*
-workflow/base_scenarios/precomputed_wls_surrogates/*
-output/baseline/*.txt
+workflow/base_scenarios/embedding_params/figures/*/
+workflow/base_scenarios/precomputed_wls_surrogates/*.txt
 output/scenario_discovery/*.csv
 
 # SLURM output
