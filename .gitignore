@@ -27,7 +27,56 @@ Manifest.toml
 ACORN/if_limits/*.csv
 ACORN/results/*
 ACORN/solar/*
-ACORN/if_limits/*
+ACORN/temp/*.txt
+ACORN/wind/*.csv
 
-# Intermediate output
+# Include ACORN data relevant for base scenarios
+!ACORN/if_limits/iflimdn_2012_85.csv
+!ACORN/if_limits/iflimup_2012_85.csv
+
+!ACORN/if_limits/iflimdn_2011_37.csv
+!ACORN/if_limits/iflimup_2011_37.csv
+
+!ACORN/if_limits/iflimdn_2002_144.csv
+!ACORN/if_limits/iflimup_2002_144.csv
+
+!ACORN/results/Scenario140
+ACORN/results/Scenario140/*.csv
+!ACORN/results/Scenario140/*_2012.csv
+
+!ACORN/results/Scenario69
+ACORN/results/Scenario69/*.csv
+!ACORN/results/Scenario69/*_2011.csv
+
+!ACORN/results/Scenario290
+ACORN/results/Scenario290/*.csv
+!ACORN/results/Scenario290/*_2002.csv
+
+!ACORN/solar/Scenario85
+ACORN/solar/Scenario85/*.csv
+!ACORN/solar/Scenario85/*2012.csv
+
+!ACORN/solar/Scenario37
+ACORN/solar/Scenario37/*.csv
+!ACORN/solar/Scenario37/*2011.csv
+
+!ACORN/solar/Scenario144
+ACORN/solar/Scenario144/*.csv
+!ACORN/solar/Scenario144/*2002.csv
+
+!ACORN/wind/wind_2012.csv
+!ACORN/wind/wind_2011.csv
+!ACORN/wind/wind_2002.csv
+
+# Output
+workflow/base_scenarios/embedding_params/*.csv
 workflow/base_scenarios/embedding_params/figures/*
+workflow/base_scenarios/precomputed_wls_surrogates/*
+output/baseline/*.txt
+output/base_scenarios/*
+output/scenario_discovery/clustering/*
+output/scenario_discovery/independence/*
+output/scenario_discovery/*.csv
+
+# SLURM output
+slurm/
