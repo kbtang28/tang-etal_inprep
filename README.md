@@ -61,14 +61,14 @@ Scripts to re-run the analysis for the three base scenarios are in the `workflow
 | --- | --- | --- |
 | `compare_embedding_opts.jl` | Script to pre-optimize embedding parameters for TE estimates. Saves results and diagnostic figures in `workflow/base_scenarios/embedding_params/`. | `sbatch workflow/base_scenarios/compare_embedding_opts.sh` |
 | `generate_wls_surrogates.jl` | Script to generate WLS surrogates. Saves results in `workflow/base_scenarios/precomputed_wls_surrogates/`. | `sbatch workflow/base_scenarios/generate_wls_surrogates.sh` |
-| `test_independence.jl` | Script to perform pairwise TE analysis. Saves results in `output/base_scenarios/`. Setup for independence tests are in `setup.jl` | `sbatch workflow/base_scenarios/test_independence.sh` |
+| `test_independence.jl` | Script to perform pairwise TE analysis. Saves results in `output/base_scenarios/`. Setup for independence tests are in `setup.jl`. | `sbatch workflow/base_scenarios/test_independence.sh` |
 
 
 ### Scenario discovery
 Scripts to re-run the scenario discovery analysis are in the `workflow/scenario_discovery/` directory.
 | Script name | Description & notes | How to run (from root directory)|
 | --- | --- | --- |
-| `test_independence.jl` | Script to perform pairwise TE analysis. Saves results in `output/scenario_discovery/independence/`. Setup for independence tests are in `setup.jl` | `sbatch workflow/scenario_discovery/test_independence.sh` |
+| `test_independence.jl` | Script to perform pairwise TE analysis. Saves results in `output/scenario_discovery/independence/`. Setup for independence tests are in `setup.jl`. | `sbatch workflow/scenario_discovery/test_independence.sh` |
 | `cluster_analysis.jl` | Script to cluster results from independence tests. Saves results in `output/scenario_discovery/clustering/`. | `sbatch workflow/scenario_discovery/cluster_analysis.sh` |
 | `sd_analysis.jl` | Script to fit classification tree to predict cluster membership. | `julia workflow/scenario_discovery/sd_analysis.jl` |
 
