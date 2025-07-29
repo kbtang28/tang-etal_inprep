@@ -18,6 +18,9 @@ end
     using DelimitedFiles
     using ProgressMeter
     using Random
+    using Printf
+
+    import ColorSchemes: seaborn_colorblind
 
     include(joinpath(@__DIR__, "..", "utils", "kmodes.jl"))
     include(joinpath(@__DIR__, "..", "utils", "other.jl"))
@@ -70,3 +73,16 @@ end
 
 # save summary results
 CSV.write(joinpath(output_dir, "cluster_res.csv"), cluster_res_df)
+
+# plot objective vs. number of clusters
+pt = 4/3
+inch = 96
+fig = Figure(size=(4inch, 2.5inch),fontsize=10pt)
+ax = Axis(fig[1,1],
+          xgridvisible=false, ygridvisible=false,
+          xlabel="number of clusters", ylabel="objective (Ng dissimilarity)",
+          xticks=2:2:20,
+          ytickformat=(xs -> [@sprintf("%.1e", x) for x in xs])
+)
+scatterlines!(ax, df.k, df.obj)
+save(joinpath(@__DIR__, "..", "..", "figures", "cluster_obj_vs_k.png"), fig)
