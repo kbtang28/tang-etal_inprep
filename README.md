@@ -102,6 +102,6 @@ The scripts listed below reproduce the named figures. Output files correspond to
 | Fig. S12 | `workflow/scenario_discovery/plot_IKif_dynamics.jl` | `clus1_IKif_util.png` |
 | Fig. S13 | `workflow/plot_EGif_examples.jl` | `EGif_examples.png` |
 | Fig. S14 | `workflow/scenario_discovery/cluster_analysis.jl` | `cluster_obj_vs_k.png` |
-| Fig. S15 | `workflow/scenario_discovery/map_simplified_IFs.ipynb` | `map_3_clusters.png` |
+| Fig. S15 | `workflow/scenario_discovery/map_simplified_IFs.ipynb` | `map_8_clusters.png` |
 | Fig. S17 | `workflow/plot_embed_err_examples.jl` | `ragwitz_criterion.png` |
 | Fig. S18 | `workflow/plot_wls_surrogates.sh` | `wls_surro_examples.png` |
