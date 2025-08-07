@@ -30,7 +30,13 @@ Link to preprint: incoming!
 
 ### Input data & contributing modeling software
 
-We use simulations from [ACORN](https://github.com/AndersonEnergyLab-Cornell/ny-clcpa2050/tree/main) in our study. For convenience, relevant model input and simulation results for the three base scenarios analyzed in the first part of our results are provided in the `ACORN` directory. Reproducing the scenario discovery portion of our analysis requires model input and simulation results from the full scenario ensemble described in [Liu et al. (2023)](https://arxiv.org/abs/2307.15079) and documented in the linked repository.
+We use simulations from [ACORN](https://github.com/AndersonEnergyLab-Cornell/ny-clcpa2050/tree/main) in our study. For convenience, relevant model input and simulation results for the three narrative scenarios analyzed in the first part of our results are provided in the `ACORN` directory. Reproducing the scenario discovery portion of our analysis requires model input and simulation results from the full scenario ensemble described in [Liu et al. (2023)](https://arxiv.org/abs/2307.15079) and documented in the linked repository.
+
+| Narrative scenario | ACORN scenario-year pair |
+| --- | --- |
+| Well-behaved | scenario 140, year 2012 |
+| Limited wind and solar resource | scenario 69, year 2011 |
+| Extreme temperature | scenario 290, year 2002 |
 
 ### Output data
 
@@ -38,7 +44,7 @@ Output from our analysis can be found in the `output` directory.
 
 - `output/base_scenarios` has summary results of the independence tests for all three base scenarios.
 - `output/scenario_discovery` has summary results of the independence tests for the entire scenario ensemble and results from the cluster analysis.
-- `scenario_features.csv` has relevant meteorological and technological features for each scenario-year pair. This data is used in the scenario discovery analysis and to create some figures.
+- `scenario_features.csv` summarizes the meteorological and technological features for each scenario-year pair; `baseline_hydro.txt`, `baseline_load.txt`, `baseline_solar.txt`, `baseline_temp.txt`, and `baseline_wind.txt` are used to compute this data. The data in `scenario_features.csv` is used in the scenario discovery analysis and to create some figures.
 
 ## Dependencies
 
