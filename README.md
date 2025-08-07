@@ -16,12 +16,12 @@ Katerina Tang<sup>1\*</sup>, M. Vivienne Liu<sup>2</sup>, C. Lindsay Anderson<su
 
 ## Abstract
 
-Renewable energy integration and end-use electrification increase the weather-dependence of decarbonized energy systems. 
-Identifying critical infrastructure that constrains the power grid's ability to meet electricity demand under weather-induced shocks and stressors is essential for understanding vulnerabilities and guiding adaptation. 
+Intermittent energy integration and end-use electrification increase the weather-dependence of modern energy systems. 
+Identifying critical infrastructure that constrains the power grid's ability to meet electricity demand under weather-induced shocks and stressors is essential for understanding risks and guiding adaptation. 
 We use transfer entropy to identify predictive pressure points: grid components whose utilization patterns provide early signals of downstream power shortages.
-Applied to simulations of New York State's proposed future zero-carbon grid under a range of meteorological and technological scenarios, our method shows that these pressure points often arise from complex, system-wide interactions between generation, transmission, and demand.
-While transfer entropy does not support strong conclusions about causality, the identified pressure points align with known vulnerabilities and offer insight into failure pathways.
-Furthermore, these pressure points are not easily predicted by high-level scenario features alone, underscoring the need for holistic and adaptive approaches to reliability planning in low-carbon power systems.
+We apply this method to simulations of New York State's proposed future grid under a range of meteorological and technological scenarios, showing that these pressure points often arise from complex, system-wide interactions between generation, transmission, and demand.
+While transfer entropy does not support conclusions about causality, the identified pressure points align with known bottlenecks and offer insight into failure pathways.
+Furthermore, these pressure points are not easily predicted by high-level scenario features alone, underscoring the need for holistic and adaptive approaches to reliability planning in power systems with intermittent resources.
 
 ## Journal reference
 Link to preprint: incoming!
@@ -30,7 +30,7 @@ Link to preprint: incoming!
 
 ### Input data & contributing modeling software
 
-We use simulations from [ACORN](https://github.com/AndersonEnergyLab-Cornell/ny-clcpa2050/tree/main) in our study. For convenience, relevant model input and simulation results for the three base scenarios analyzed in the first part of our results are provided in the `ACORN` directory. Reproducing the scenario discovery portion of our analysis requires model input and simulation results from the full scenario ensemble described in [Liu et al. (2023)](https://arxiv.org/abs/2307.15079) and documented in the above repository.
+We use simulations from [ACORN](https://github.com/AndersonEnergyLab-Cornell/ny-clcpa2050/tree/main) in our study. For convenience, relevant model input and simulation results for the three base scenarios analyzed in the first part of our results are provided in the `ACORN` directory. Reproducing the scenario discovery portion of our analysis requires model input and simulation results from the full scenario ensemble described in [Liu et al. (2023)](https://arxiv.org/abs/2307.15079) and documented in the linked repository.
 
 ### Output data
 
@@ -42,7 +42,7 @@ Output from our analysis can be found in the `output` directory.
 
 ## Dependencies
 
-This code is based on Julia 1.10.0. Relecant dependencies are in the `Project.toml` and `Manifest.toml` files. (The `Manifest.toml` file specifies the particular versions; this file should be kept as-is for perfect reproducibility but may need to be deleted and rebuilt with `Pkg.instantiate()` for different Julia versions.)
+This code is based on Julia 1.10.0. Relevant dependencies are in the `Project.toml` and `Manifest.toml` files. (The `Manifest.toml` file specifies the particular versions; this file should be kept as-is for perfect reproducibility but may need to be deleted and rebuilt with `Pkg.instantiate()` for different Julia versions.)
 
 ## Reproduction
 
