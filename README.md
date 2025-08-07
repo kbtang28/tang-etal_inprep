@@ -2,7 +2,7 @@ _your zenodo badge here_
 
 # Tang-etal_inprep
 
-**Identification of pressure points in decarbonized power systems using transfer entropy**
+**Identification of pressure points in modern power systems using transfer entropy**
 
 Katerina Tang<sup>1\*</sup>, M. Vivienne Liu<sup>2</sup>, C. Lindsay Anderson<sup>1,3,</sup>, and Vivek Srikrishnan<sup>3</sup>
 
