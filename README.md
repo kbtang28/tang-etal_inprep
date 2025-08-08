@@ -69,6 +69,7 @@ Scripts to re-run the analysis for the three base scenarios are in the `workflow
 | `generate_wls_surrogates.jl` | Script to generate WLS surrogates. Saves results in `workflow/base_scenarios/precomputed_wls_surrogates/`. | `sbatch workflow/base_scenarios/generate_wls_surrogates.sh` |
 | `test_independence.jl` | Script to perform pairwise TE analysis. Saves results in `output/base_scenarios/`. Setup for independence tests are in `setup.jl`. | `sbatch workflow/base_scenarios/test_independence.sh` |
 
+This workflow takes approximately 3 hours to run in an HPC environment; the majority of this time is spent optimizing the embedding parameters, which we choose to pre-optimize and save separately to ensure reproducibility and allow for testing different surrogate generation methods with a consistent embedding setup.
 
 ### Scenario discovery
 Scripts to re-run the scenario discovery analysis are in the `workflow/scenario_discovery/` directory.
@@ -78,8 +79,10 @@ Scripts to re-run the scenario discovery analysis are in the `workflow/scenario_
 | `cluster_analysis.jl` | Script to cluster results from independence tests. Saves results in `output/scenario_discovery/clustering/`. | `sbatch workflow/scenario_discovery/cluster_analysis.sh` |
 | `sd_analysis.jl` | Script to fit classification tree to predict cluster membership. | `julia workflow/scenario_discovery/sd_analysis.jl` |
 
+The TE analysis takes approximately 36 hours to run in an HPC environment; the cluster analysis takes approximately 9 hours to run in an HPC environment.
+
 ## Reproduce paper figures
-The scripts listed below reproduce the named figures. Output files correspond to the files in `figures/`.
+The scripts listed below reproduce the named figures. Output files correspond to the files in `figures/`. Some figure scripts do require ACORN model input and simulation results from the full scenario ensemble described in [Liu et al. (2023)](https://arxiv.org/abs/2307.15079).
 
 | Figure(s) | Script | Output File |
 | --- | --- | --- |
