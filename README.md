@@ -1,4 +1,4 @@
-_your zenodo badge here_
+[![DOI](https://zenodo.org/badge/1024465190.svg)](https://doi.org/10.5281/zenodo.16783066)
 
 # Tang-etal_inprep
 
