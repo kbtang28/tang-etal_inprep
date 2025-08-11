@@ -16,11 +16,11 @@ Katerina Tang<sup>1\*</sup>, M. Vivienne Liu<sup>2</sup>, C. Lindsay Anderson<su
 
 ## Abstract
 
-Intermittent energy integration and end-use electrification increase the weather-dependence of modern energy systems. 
-Identifying critical infrastructure that constrains the power grid's ability to meet electricity demand under weather-induced shocks and stressors is essential for understanding risks and guiding adaptation. 
-We use transfer entropy to identify predictive pressure points: grid components whose utilization patterns provide early signals of downstream power shortages.
-We apply this method to simulations of New York State's proposed future grid under a range of meteorological and technological scenarios, showing that these pressure points often arise from complex, system-wide interactions between generation, transmission, and demand.
-While transfer entropy does not support conclusions about causality, the identified pressure points align with known bottlenecks and offer insight into failure pathways.
+Integration of variable energy resources---\emph{e.g.}, solar, wind, and hydro---and end-use electrification increase modern energy systems' weather-dependence.
+Identifying critical infrastructure constraining the power grid's ability to meet electricity demand under weather-induced shocks and stressors is essential for understanding risks and guiding adaptation. 
+We use transfer entropy to identify predictive pressure points: grid components whose utilization patterns provide early signals of downstream power shortages. 
+We apply this method to simulations of New York State's proposed future grid under various meteorological and technological scenarios, showing that pressure points often arise from complex, system-wide interactions between generation, transmission, and demand. 
+While transfer entropy does not support conclusions about causality, the identified pressure points align with known bottlenecks and offer insight into failure pathways. 
 Furthermore, these pressure points are not easily predicted by high-level scenario features alone, underscoring the need for holistic and adaptive approaches to reliability planning in power systems with intermittent resources.
 
 ## Journal reference
