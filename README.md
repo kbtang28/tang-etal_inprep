@@ -16,7 +16,7 @@ Katerina Tang<sup>1\*</sup>, M. Vivienne Liu<sup>2</sup>, C. Lindsay Anderson<su
 
 ## Abstract
 
-Integration of variable energy resources---\emph{e.g.}, solar, wind, and hydro---and end-use electrification increase modern energy systems' weather-dependence.
+Integration of variable energy resources—*e.g.*, solar, wind, and hydro—and end-use electrification increase modern energy systems' weather-dependence.
 Identifying critical infrastructure constraining the power grid's ability to meet electricity demand under weather-induced shocks and stressors is essential for understanding risks and guiding adaptation. 
 We use transfer entropy to identify predictive pressure points: grid components whose utilization patterns provide early signals of downstream power shortages. 
 We apply this method to simulations of New York State's proposed future grid under various meteorological and technological scenarios, showing that pressure points often arise from complex, system-wide interactions between generation, transmission, and demand. 
