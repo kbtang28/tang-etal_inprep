@@ -24,7 +24,7 @@ While transfer entropy does not support conclusions about causality, the identif
 Furthermore, these pressure points are not easily predicted by high-level scenario features alone, underscoring the need for holistic and adaptive approaches to reliability planning in power systems with intermittent resources.
 
 ## Journal reference
-Link to preprint: incoming!
+Link to preprint: https://arxiv.org/abs/2508.08513
 
 ## Data reference
 
