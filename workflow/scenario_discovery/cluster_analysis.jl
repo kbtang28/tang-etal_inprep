@@ -45,6 +45,8 @@ for yr in 1998:2019
     df[df.yr .== yr, Between(:if1, :if15)] = mapreduce(x -> (x.bus_44_pvalue .< 0.05)', vcat, gdf) # binary encoding
 end
 
+CSV.write(joinpath(output_dir, "if_flags.csv"), df)
+
 # 0/1 matrices where 1 = significant nonzero TE, 0 = no significant nonzero TE
 data = Matrix(df[:, Not(:scenario, :yr)])'
 
