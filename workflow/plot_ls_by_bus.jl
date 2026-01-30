@@ -88,7 +88,7 @@ boxplot!(ax1,
          new_ls_hrs_df[new_ls_hrs_df.bus_id .== id44, :bus_id], new_ls_hrs_df[new_ls_hrs_df.bus_id .== id44, :hrs]/length(JJA_idx),
          color=seaborn_colorblind[2]
 )
-text!(11, maximum(new_ls_hrs_df.hrs)/length(JJA_idx), text="(a)", font=:bold, align=(:left, :top))
+text!(11, maximum(new_ls_hrs_df.hrs)/length(JJA_idx), text="(a)", font=:bold, align=(:left, :top), offset=(-5,0))
 
 new_ls_prop_df = stack(ls_prop_df[:, [Symbol("bus$(b)") for b in ids]], variable_name=:bus_id, value_name=:ls_prop)
 transform!(new_ls_prop_df, :bus_id => ByRow(str -> parse(Int64, strip(str, ['b', 'u', 's']))) => :bus_id)
@@ -107,7 +107,7 @@ boxplot!(ax2,
          new_ls_prop_df[new_ls_prop_df.bus_id .== id44, :bus_id], new_ls_prop_df[new_ls_prop_df.bus_id .== id44, :ls_prop],
          color=seaborn_colorblind[2]
 )
-text!(11, maximum(new_ls_prop_df.ls_prop), text="(b)", font=:bold, align=(:left, :top))
+text!(11, maximum(new_ls_prop_df.ls_prop), text="(b)", font=:bold, align=(:left, :top), offset=(-5,0))
 
 yspace = maximum(tight_yticklabel_spacing!, [ax1, ax2])
 ax1.yticklabelspace = yspace+2.0

@@ -18,12 +18,13 @@ insertcols!(scenario_df, :label => vec(labels))
 # plot
 pt = 4/3
 inch = 96
-fig = Figure(size=(3.5inch, 0inch), fontsize=8pt)
+cm = inch / 2.54
+fig = Figure(size=(8.5cm, 10cm), fontsize=8pt)
 cluster_colors = Dict(1 => (seaborn_colorblind[1], 1.0), 2 => (seaborn_colorblind[5], 1.0), 3 => (seaborn_colorblind[3], 1.0))
 color = [cluster_colors[scenario_df.label[i]] for i in 1:nrow(scenario_df)]
 ax1 = Axis(fig[1,2],
            xgridvisible=false, ygridvisible=false,
-           xlabel="cluster", ylabel="solar availability (10³ MWh)",
+           xlabel="cluster", ylabel="solar availability anomaly (GW)",
            limits=((0.25, 3.75), nothing),
            xticks=1:3, ytickformat="{:.1f}"
 )
@@ -45,4 +46,4 @@ boxplot!(ax2,
 
 rowsize!(fig.layout, 1, Aspect(1, 2.0))
 resize_to_layout!(fig)
-save(joinpath(@__DIR__, "..", "..", "figures", "clusters_solar_temp_boxplots.png"), fig)
+save(joinpath(@__DIR__, "..", "..", "figures", "clusters_solar_temp_boxplots.png"), fig, px_per_unit=400/inch)

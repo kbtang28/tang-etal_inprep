@@ -51,7 +51,7 @@ pt = 4/3
 inch = 96
 
 # plot G-H and F-G IF utilization, zone F renewables availability for well-behaved scenario
-fig = Figure(size=(0inch, 2.25inch), fontsize=10pt)
+fig = Figure(size=(0inch, 2.5inch), fontsize=10pt)
 _, _, _, wind_cap_sf, solar_cap_sf, _, du_scenario = get_du_factors(140)
 ls_df = scale_load_shed_results(140, 2012)
 ls = ls_df[44, :scaled_load_shed][JJA_idx]
@@ -86,7 +86,6 @@ ax2 = Axis(fig[2,1],
            title="(b) Zone F renewable energy availability",
            titlegap=6.0
 )
-hidexdecorations!(ax2)
 vspan!(ax2, xlow, xhigh, color=("#d32f2f", 0.3))
 band!(ax2, 
       1:sum(Jl_idx), zeros(sum(Jl_idx)), wind_cap_F[Jl_idx]/1e4, 
@@ -105,6 +104,6 @@ yspace = maximum(tight_yticklabel_spacing!, [ax1, ax2])
 ax1.yticklabelspace = yspace+3.0
 ax2.yticklabelspace = yspace+3.0
 
-colsize!(fig.layout, 1, Aspect(1, 8.0))
+colsize!(fig.layout, 1, Aspect(1, 10.0))
 resize_to_layout!(fig)
-save(joinpath(@__DIR__, "..", "..", "figures", "s140_GHif_zoneFrenewables.png"), fig)
+save(joinpath(@__DIR__, "..", "..", "figures", "s140_GHif_zoneFrenewables.png"), fig, dpi=300)

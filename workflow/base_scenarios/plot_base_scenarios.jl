@@ -44,17 +44,18 @@ end
 
 pt = 4/3
 inch = 96
+cm = inch / 2.54
 
 JJA_idx = vcat(get_month_idx(6), get_month_idx(7), get_month_idx(8))
 
 # plot scenario features for full ensemble with base scenarios highlighted
-fig = Figure(size=(0inch, 2.25inch), fontsize=8pt)
+fig = Figure(size=(17cm, 5.5cm), fontsize=8pt)
 scenario_features_df = DataFrame(CSV.File(joinpath(@__DIR__, "..", "..", "output", "scenario_features.csv")))
 scen_yr_pairs = [(140, 2012), (69, 2011), (290, 2002)]
 ids = [findall((scenario_features_df.scenario .== scen) .&& (scenario_features_df.yr .== yr))[1] for (scen, yr) in scen_yr_pairs]
 ax1 = Axis(fig[1,1], 
            xgridvisible=false, ygridvisible=false, 
-           xlabel="solar avail. anomaly (10³ MWh)", ylabel="wind avail. anomaly (10³ MWh)", 
+           xlabel="solar avail. anomaly (GW)", ylabel="wind avail. anomaly (GW)", 
            xtickformat="{:.1f}", ytickformat="{:.1f}",
            xticklabelsize=7pt, yticklabelsize=7pt
 )
@@ -71,55 +72,59 @@ scatter!(ax1,
 )
 text!(ax1, 
       [maximum(scenario_features_df.avg_solar_anomaly/1e3)], [maximum(scenario_features_df.avg_wind_anomaly/1e3)], 
-      text="(a)", 
+      text="A", 
       font=:bold, align=(:right, :top)
 )
 text!(ax1,
       scenario_features_df.avg_solar_anomaly[ids[1]]/1e3, scenario_features_df.avg_wind_anomaly[ids[1]]/1e3,
       text=["1"],
       align=(:right, :center),
-      offset=(-10.0, 0.0)
+      offset=(15.0, 0.0),
+      font=:bold
 )
 text!(ax1,
       scenario_features_df.avg_solar_anomaly[ids[2]]/1e3, scenario_features_df.avg_wind_anomaly[ids[2]]/1e3,
       text=["2"],
       align=(:left, :center),
-      offset=(10.0, 0.0)
+      offset=(10.0, 0.0),
+      font=:bold
 )
 text!(ax1,
       scenario_features_df.avg_solar_anomaly[ids[3]]/1e3, scenario_features_df.avg_wind_anomaly[ids[3]]/1e3,
       text=["3"],
       align=(:right, :center),
-      offset=(-10.0, 0.0)
+      offset=(-10.0, 0.0),
+      font=:bold
 )
 
 ax2 = Axis(fig[1,2], 
            xgridvisible=false, ygridvisible=false, 
-           xlabel="temp. anomaly (°C)", ylabel="hydro avail. anomaly (10⁵ MWh)", 
+           xlabel="temp. anomaly (°C)", ylabel="hydro avail. anomaly (TW)", 
            xtickformat="{:.1f}", ytickformat="{:.1f}",
            xticklabelsize=7pt, yticklabelsize=7pt
 )
 scatter!(ax2, 
-         scenario_features_df.avg_temp_anomaly, scenario_features_df.avg_hydro_anomaly/1e5,
+         scenario_features_df.avg_temp_anomaly, scenario_features_df.avg_hydro_anomaly/1e6,
          markersize=6.0, 
          color="#a1a1a1", alpha=0.2
 )
 scatter!(ax2, 
-         scenario_features_df.avg_temp_anomaly[ids], scenario_features_df.avg_hydro_anomaly[ids]/1e5, 
+         scenario_features_df.avg_temp_anomaly[ids], scenario_features_df.avg_hydro_anomaly[ids]/1e6, 
          color=[seaborn_colorblind[3], "#5d55cd", seaborn_colorblind[2]], 
          strokecolor=:black, strokewidth=1.5, 
          markersize=10.0
 )
 text!(ax2, 
-      [maximum(scenario_features_df.avg_temp_anomaly)], [maximum(scenario_features_df.avg_hydro_anomaly/1e5)], 
-      text="(b)", 
+      [maximum(scenario_features_df.avg_temp_anomaly)], [maximum(scenario_features_df.avg_hydro_anomaly/1e6)], 
+      text="B", 
       font=:bold, align=(:right, :top)
 )
 text!(ax2,
-      scenario_features_df.avg_temp_anomaly[ids], scenario_features_df.avg_hydro_anomaly[ids]/1e5,
+      scenario_features_df.avg_temp_anomaly[ids], scenario_features_df.avg_hydro_anomaly[ids]/1e6,
       text=["1", "2", "3"],
       align=(:right, :center),
-      offset=(-10.0, 0.0)
+      offset=(-10.0, 0.0),
+      font=:bold
 )
 
 ax3 = Axis(fig[1,3], 
@@ -141,33 +146,34 @@ scatter!(ax3,
 )
 text!(ax3, 
       [maximum(scenario_features_df.prop_congested_pos_hrs)], [maximum(scenario_features_df.prop_curtailed)], 
-      text="(c)", 
+      text="C", 
       font=:bold, align=(:right, :top)
 )
 text!(ax3,
       scenario_features_df.prop_congested_pos_hrs[ids], scenario_features_df.prop_curtailed[ids],
       text=["1", "2", "3"],
       align=(:right, :center),
-      offset=(-10.0, 0.0)
+      offset=(-10.0, 0.0),
+      font=:bold
 )
 
 elems = [MarkerElement(color=seaborn_colorblind[3], marker=:circle, strokewidth=1.5, markersize=10.0), 
          MarkerElement(color="#5d55cd", marker=:circle, strokewidth=1.5, markersize=10.0), 
          MarkerElement(color=seaborn_colorblind[2], marker=:circle, strokewidth=1.5, markersize=10.0)
 ]
-axislegend(ax3, 
+axislegend(ax1, 
            elems, ["Well-behaved", "Limited wind\nand solar", "Extreme temp."], 
-           position=:lb, rowgap=-0.1, patchlabelgap=2.0, padding=(0.0, 6.0, 0.0, 0.0),
+           position=:lt, rowgap=-0.1, patchlabelgap=2.0, padding=(0.0, 6.0, 0.0, 0.0),
            fontsize=7pt
 )
 colsize!(fig.layout, 1, Aspect(1, 1.0))
 colsize!(fig.layout, 2, Aspect(1, 1.0))
 colsize!(fig.layout, 3, Aspect(1, 1.0))
 resize_to_layout!(fig)
-save(joinpath(@__DIR__, "..", "..", "figures", "scenario_features.png"), fig, px_per_unit=300/inch)
+save(joinpath(@__DIR__, "..", "..", "figures", "scenario_features.png"), fig, px_per_unit=400/inch)
 
 # plot renewable capacity ratios
-fig = Figure(size=(0inch, 2.8inch), fontsize=8pt)
+fig = Figure(size=(17cm, 7cm), fontsize=8pt)
 # baseline scenario (scenario 140, 2012)
 _, _, _, base_wind_cap_sf, base_solar_cap_sf, _, base_du_scenario = get_du_factors(140)
 base_ls_df = scale_load_shed_results(140, 2012)
@@ -206,8 +212,15 @@ axa = Axis(ga[1,1],
            xticks=(1:5, ["Zone A\nsolar", "Zone B\nsolar", "Zone C\nwind", "Zone E\nwind", "Zone K\nwind"]),
            ylabel="prop. of installed\ncapacity available",
            yticklabelsize=7pt,
-           title="(a) Well-behaved scenario",
+           title="Well-behaved scenario",
            titlegap=6.0
+)
+text!(axa,
+      5.35, 0.85,
+      text=["A"],
+      align=(:left, :center),
+      offset=(0.0, 0.0),
+      font=:bold
 )
 for (i, ratio) in enumerate([base_solar_ratio_A, base_solar_ratio_B])
     color = map(base_side) do s
@@ -250,8 +263,15 @@ axb = Axis(gb[1,1],
            limits=((0.5, 2.65), (0.0, 1.0)),
            xticks=(1:2, ["Zone B\nsolar", "Zone A\nwind"]),
            yticklabelsize=7pt,
-           title="(b) Limited resource scenario",
+           title="Limited resource scenario",
            titlegap=6.0
+)
+text!(axb,
+      2.35, 0.85,
+      text=["B"],
+      align=(:left, :center),
+      offset=(0.0, 0.0),
+      font=:bold
 )
 for (i, ratio) in enumerate([lr_solar_ratio_B])
     color = map(lr_side) do s
@@ -317,8 +337,15 @@ axc = Axis(gc[1,1],
            xticks=(1:9, ["Zone A\nsolar", "Zone B\nsolar", "Zone G\nsolar", "Zone K\nsolar", "Zone C\nwind", "Zone D\nwind", "Zone G\nwind", "Zone H\nwind", "Zone K\nwind"]),
            ylabel="prop. of installed\ncapacity available",
            yticklabelsize=7pt,
-           title="(c) Extreme temperature scenario",
+           title="Extreme temperature scenario",
            titlegap=6.0
+)
+text!(axc,
+      9.4, 0.85,
+      text=["C"],
+      align=(:left, :center),
+      offset=(5.0, 0.0),
+      font=:bold
 )
 for (i, ratio) in enumerate([ext_solar_ratio_A, ext_solar_ratio_B, ext_solar_ratio_G, ext_solar_ratio_K])
     color = map(ext_side) do s
@@ -345,17 +372,18 @@ Legend(gab[1,3],
        orientation=:vertical, 
        tellwidth=false, tellheight=false, 
        patchsize=(20.0, 20.0), 
-       patchlabelgap=10.0, 
+       patchlabelgap=5.0, 
        rowgap=13,
        framevisible=false
 )
 
+colgap!(gab, 1, 7.0)
 colsize!(fig.layout, 1, Aspect(2, 8.0))
 colsize!(gab, 1, Relative(5/9))
 colsize!(gab, 2, Relative(2.5/9))
 colsize!(gab, 3, Relative(1.5/9))
 resize_to_layout!(fig)
-save(joinpath(@__DIR__, "..", "..", "figures", "renew_ratios.png"), fig)
+save(joinpath(@__DIR__, "..", "..", "figures", "renew_ratios.png"), fig, px_per_unit=400/inch)
 
 # plot curtailment and power shortages for all three scenarios
 fig = Figure(size=(10inch, 7inch), fontsize=10pt)
