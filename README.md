@@ -16,12 +16,12 @@ Katerina Tang<sup>1\*</sup>, M. Vivienne Liu<sup>2</sup>, C. Lindsay Anderson<su
 
 ## Abstract
 
-Integration of variable energy resources—*e.g.*, solar, wind, and hydro—and end-use electrification increase modern energy systems' weather-dependence.
-Identifying critical infrastructure constraining the power grid's ability to meet electricity demand under weather-induced shocks and stressors is essential for understanding risks and guiding adaptation. 
-We use transfer entropy to identify predictive pressure points: grid components whose utilization patterns provide early signals of downstream power shortages. 
-We apply this method to simulations of New York State's proposed future grid under various meteorological and technological scenarios, showing that pressure points often arise from complex, system-wide interactions between generation, transmission, and demand. 
-While transfer entropy does not support conclusions about causality, the identified pressure points align with known bottlenecks and offer insight into failure pathways. 
-Furthermore, these pressure points are not easily predicted by high-level scenario features alone, underscoring the need for holistic and adaptive approaches to reliability planning in power systems with intermittent resources.
+Integration of variable energy resources---\textit{e.g.}, solar, wind, and hydro---and end-use electrification increase the weather dependence of modern energy systems.
+Understanding how weather-driven stress propagates through interconnected generation, transmission, and demand is therefore essential for understanding risks and guiding adaptation.
+We use transfer entropy to identify predictive pressure points: grid components whose utilization dynamics provide predictive information about downstream power shortages.
+Using simulations of New York State’s proposed future power grid across a large ensemble of meteorological and technological scenarios, we show that predictive pressure points frequently emerge from complex, system-wide interactions between generation, transmission, and demand.
+Importantly, these predictive pressure points vary across scenarios and are often difficult to anticipate from high-level scenario features alone.
+While transfer entropy cannot establish causality or prescribe optimal infrastructure investments, it offers a complementary, data-driven diagnostic perspective on reliability by revealing how and where system stress propagates under realistic operating dynamics.
 
 ## Journal reference
 Link to preprint: https://arxiv.org/abs/2508.08513
@@ -104,7 +104,7 @@ The scripts listed below reproduce the named figures. Output files correspond to
 | Fig. S11 | `workflow/scenario_discovery/plot_example_IF_dynamics.jl` | `clus1_ABif_BCif_PJMif_utilization.png` |
 | Fig. S12 | `workflow/scenario_discovery/plot_IKif_dynamics.jl` | `clus1_IKif_util.png` |
 | Fig. S13 | `workflow/plot_EGif_examples.jl` | `EGif_examples.png` |
-| Fig. S14 | `workflow/scenario_discovery/cluster_analysis.jl` | `cluster_obj_vs_k.png` |
-| Fig. S15 | `workflow/scenario_discovery/map_simplified_IFs.ipynb` | `map_8_clusters.png` |
-| Fig. S17 | `workflow/plot_embed_err_examples.jl` | `ragwitz_criterion.png` |
-| Fig. S18 | `workflow/plot_wls_surrogates.sh` | `wls_surro_examples.png` |
+| Fig. S14 | `workflow/plot_embed_err_examples.jl` | `ragwitz_criterion.png` |
+| Fig. S15 | `workflow/plot_wls_surrogates.sh` | `wls_surro_examples.png` |
+| Fig. S16 | `workflow/scenario_discovery/cluster_analysis.jl` | `cluster_obj_vs_k.png` |
+| Fig. S17 | `workflow/scenario_discovery/map_simplified_IFs.ipynb` | `map_8_clusters.png` |
