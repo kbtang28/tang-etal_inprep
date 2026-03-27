@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/1024465190.svg)](https://doi.org/10.5281/zenodo.16783066)
 
-# Tang-etal_inprep
+# Tang-etal_2026_CellRepSustain
 
 **Identification of pressure points in modern power systems using transfer entropy**
 
@@ -24,7 +24,7 @@ Importantly, these predictive pressure points vary across scenarios and are ofte
 While transfer entropy cannot establish causality or prescribe optimal infrastructure investments, it offers a complementary, data-driven diagnostic perspective on reliability by revealing how and where system stress propagates under realistic operating dynamics.
 
 ## Journal reference
-Link to preprint: https://arxiv.org/abs/2508.08513
+Tang et al., Identification of pressure points in modern power systems using transfer entropy. Cell Reports Sustainability 3, 100660 (2026). https://doi.org/10.1016/j.crsus.2026.100660.
 
 ## Data reference
 
