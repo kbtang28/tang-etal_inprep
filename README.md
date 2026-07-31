@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/1024465190.svg)](https://doi.org/10.5281/zenodo.16783066)
+<a href="https://doi.org/10.5281/zenodo.16783066"><img src="https://zenodo.org/badge/1024465190.svg" alt="DOI"></a>
 
 # Tang-etal_2026_CellRepSustain
 
